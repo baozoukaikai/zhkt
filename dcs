@@ -1,0 +1,95 @@
+server:
+  port: 8762
+
+#手动刷新配置
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh,health,info
+
+#OpenFeign 是默认自带熔断器的，但是默认关闭的，我们可以在 application.yml 中开启它
+#开启熔断器
+feign:
+  hystrix:
+    enabled: true
+
+debug: false
+
+mybatis:
+  config-location: classpath:mybatis.xml
+  mapper-locations: classpath:com/yhxy/mapper/**/*.xml
+
+spring:
+  application:
+    name: dcs
+  devtools:
+    restart:
+      enabled: true  #设置开启热部署   true为开启
+  freemarker:
+     cache: false    #页面不加载缓存，修改即时生效
+  datasource:
+    druid:
+      jdbcUrl: jdbc:mysql://rm-wz9cft8yxf94n94d4o.mysql.rds.aliyuncs.com/yhykt?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+      username: root
+      password: Yhxy2017
+    druid2:
+      jdbcUrl: jdbc:mysql://rm-wz9cft8yxf94n94d4o.mysql.rds.aliyuncs.com/yhykt?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+      username: root
+      password: Yhxy2017
+    druid3:
+      jdbcUrl: jdbc:mysql://rm-wz9cft8yxf94n94d4o.mysql.rds.aliyuncs.com/yhykt?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+      username: root
+      password: Yhxy2017
+
+  servlet:
+    multipart:
+      max-file-size: 100MB #20MB  限制上传文件大小
+      max-request-size: 100MB #200MB 限制上传文件大小
+      
+  redis:
+     host: r-2ze4c5c536af91b4pd.redis.rds.aliyuncs.com
+     database: 0
+     port: 6379
+     timeout: 30000s
+     password: Alexchili2019
+     lettuce:
+       shutdown-timeout: 100ms
+     pool:
+       max-active: 8
+       max-wait: 60000ms
+       max-idle: 8
+       min-idle: 
+
+pagehelper:
+    helperDialect: mysql
+    reasonable: true
+    supportMethodsArguments: true
+    params: count=countSql 
+
+http:
+    encoding:
+      charset: utf-8
+      enabled: true
+
+jwtKey: 
+    secret: zhkt-Alex-2019
+    tokenExpireTime: 14400000 #2小时：7200000   48小时：172800000   一年： 31536000000
+    cousCodeExpireTime: 600000 #10分钟
+    
+ftp:
+    host: 47.94.238.78 #host: 47.94.238.78
+    port: 21
+    username: ftp #ftp
+    password: 123456
+    filepath: /
+    localEncoding: GBK # 本地客户端编码
+    serverEncoding: GBK # windows服务器ftp 编码  默认为GBK
+    clientTimeout: 30000
+    binaryTransfer: true
+    passiveMode: false #阿里云测试ftp 使用 主动模式 ；  宁夏工商ftp 使用被动模式
+    basePath: /zhkt/users/
+    
+tomcat:
+   filePath: /usr/java/apache-tomcat-9.0.13/webapps/files/zhkt   #tomcat服务 文件绝对路径           /usr/java/apache-tomcat-9.0.13/webapps/files/zhkt
+   tomcatfix: http://47.93.6.67/files/zhkt  #tomcat文件访问路径   宁夏工商：10.103.12.61

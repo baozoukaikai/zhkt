@@ -32,17 +32,20 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource
     db:
       driver-class-name: com.mysql.jdbc.Driver
-      jdbc-url: jdbc:mysql://rm-wz9cft8yxf94n94d4o.mysql.rds.aliyuncs.com/yh_zhkt?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+      jdbc-url: jdbc:mysql://rm-wz9cft8yxf94n94d4o.mysql.rds.aliyuncs.com/nxgs?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
+      url: jdbc:mysql://rm-wz9cft8yxf94n94d4o.mysql.rds.aliyuncs.com/nxgs?useUnicode=true&characterEncoding=UTF-8
       username: root
       password: Yhxy2017
-    db2:
-      driver-class-name: com.mysql.jdbc.Driver
-      jdbc-url: jdbc:mysql://rm-wz9cft8yxf94n94d4o.mysql.rds.aliyuncs.com/yh_zhkt?useUnicode=true&characterEncoding=UTF-8&useSSL=false
-      username: root
-      password: Yhxy2017
+    #db2:  # 
+     # driver-class-name: oracle.jdbc.driver.OracleDriver
+      #jdbc-url: jdbc:oracle:thin:@10.10.12.240:1521:ORCL
+      #url: jdbc:oracle:thin:@10.10.12.240:1521:ORCL
+      #username: scott
+      #password: scott
     db3:
       driver-class-name: com.mysql.jdbc.Driver
-      jdbc-url: jdbc:mysql://rm-wz9cft8yxf94n94d4o.mysql.rds.aliyuncs.com/yh_zhkt?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+      jdbc-url: jdbc:mysql://rm-wz9cft8yxf94n94d4o.mysql.rds.aliyuncs.com/lt_zhkt?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
+      url: jdbc:mysql://rm-wz9cft8yxf94n94d4o.mysql.rds.aliyuncs.com/lt_zhkt?useUnicode=true&characterEncoding=UTF-8
       username: root
       password: Yhxy2017
 

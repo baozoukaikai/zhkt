@@ -29,17 +29,18 @@ spring:
   freemarker:
      cache: false    #页面不加载缓存，修改即时生效
   datasource:
-    druid:
+    type: com.alibaba.druid.pool.DruidDataSource
+    db:
       driver-class-name: com.mysql.jdbc.Driver
       jdbc-url: jdbc:mysql://rm-wz9cft8yxf94n94d4o.mysql.rds.aliyuncs.com/yh_zhkt?useUnicode=true&characterEncoding=UTF-8&useSSL=false
       username: root
       password: Yhxy2017
-    druid2:
+    db2:
       driver-class-name: com.mysql.jdbc.Driver
       jdbc-url: jdbc:mysql://rm-wz9cft8yxf94n94d4o.mysql.rds.aliyuncs.com/yh_zhkt?useUnicode=true&characterEncoding=UTF-8&useSSL=false
       username: root
       password: Yhxy2017
-    druid3:
+    db3:
       driver-class-name: com.mysql.jdbc.Driver
       jdbc-url: jdbc:mysql://rm-wz9cft8yxf94n94d4o.mysql.rds.aliyuncs.com/yh_zhkt?useUnicode=true&characterEncoding=UTF-8&useSSL=false
       username: root
